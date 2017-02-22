@@ -1,0 +1,15 @@
+<h2>Create a Gig</h2>
+
+
+
+<%= simple_form_for @gig do |f| %>
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.input :price %>
+  <%= f.input :seating_capacity %>
+  <%= f.input :description %>
+  <%= f.input :date, as: :date, start_year: Date.today.year,
+                              end_year: Date.today.year + 10, discard_day: true,
+                              order: [:month, :year] %>
+  <%= f.button :submit %>
+<% end %>
