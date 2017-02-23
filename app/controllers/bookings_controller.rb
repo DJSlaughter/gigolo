@@ -24,9 +24,18 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+   @booking = Booking.find(params[:id])
+
+   if @booking.update_attributes(booking_params)
+      redirect_to booking_path(@gig)    #:action => 'show'
+   else
+      render :edit
+   end
+
   private
 
-  def gig_params
+  def booking_params
     params.require(:booking).permit(:quatity, :user_id, :rating, :rating_description, :gig_id)
   end
 
