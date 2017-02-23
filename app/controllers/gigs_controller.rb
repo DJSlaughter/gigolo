@@ -24,6 +24,23 @@ class GigsController < ApplicationController
     end
   end
 
+  def edit
+    @gig = Gig.find(params[:id])
+  end
+
+
+  def update
+   @gig = Gig.find(params[:id])
+
+   if @gig.update(gig_params)
+      redirect_to gig_path(@gig)
+          #:action => 'show'
+   else
+      render :edit
+   end
+
+end
+
   private
 
   def gig_params
