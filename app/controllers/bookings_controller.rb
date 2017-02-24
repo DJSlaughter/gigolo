@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
   def update
    @booking = Booking.find(params[:id])
 
-   if @booking.update_attributes(booking_params)
+   if @booking.update(booking_params)
       redirect_to booking_path(@gig)    #:action => 'show'
    else
       render :edit
