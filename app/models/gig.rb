@@ -5,6 +5,8 @@ class Gig < ApplicationRecord
   has_many :bookings
   has_many :users, :through => :bookings
   mount_uploader :photo, PhotoUploader
+  geocoded_by :location
+  after_validation :geocode, if: :location_changed?
 # example from Nick
 # def booked_users
 #   User.joins(:bookings).where("bookings.gig_id = ?" , id)
