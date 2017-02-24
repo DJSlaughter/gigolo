@@ -4,7 +4,31 @@
 
   <%= @gig.name  %>
   <% if @gig.photo? %>
-  <%= cl_image_tag @gig.photo, height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag @gig.photo, height: 300, width: 400, crop: :fill %>
   <% end %>
+
 </p>
+<p>Congrats <%= @gig.host.first_name %> <%= @gig.host.last_name %> </p>
+
+<h3>You have created the new GIG - <%= @gig.name %></h3>
+<p> Location: <%= @gig.location %> </p>
+
+<p>PRICE: $<%= @gig.price %> </p>
+<p> Description: <%= @gig.description%> </p>
+
+<%= link_to "Back", edit_gig_path(@gig) %>
+<%= link_to "Delete", gig_path(@gig), method: :delete %>
+
+
+<h3>Other gigs that <%= current_user.first_name %> <%= current_user.last_name %> is hosting:</h3>
+  <% @gig.host.gigs.each do |gig| %>
+    <p> <%= gig.name %>: <%= gig.date %> => <%= gig.description %> </p>
+
+
+  <% end %>
+
+
+
+
+
 
