@@ -1,12 +1,25 @@
 // Your footer style
-.footer-container {
-  margin-top: 40px;
-  padding: 40px 0px 200px 100px;
-  background-color: #fff;
-  color: #484848;
-  border-top: 3px solid #dce0e0;
-}
+#footer {
+  margin-top: 15px;
+  background: #222222;
+  padding: 30px 0;
+  color: #CCCCCC; }
 
-.footer-onethird {
-  border-left: 1px solid #dce0e0;
-}
+/* line 6, /Users/boris/code/lewagon/middleman-airbnb/source/stylesheets/layout/_footer.scss */
+#footer p {
+  margin-top: 17px; }
+
+/* line 9, /Users/boris/code/lewagon/middleman-airbnb/source/stylesheets/layout/_footer.scss */
+#footer ul {
+  margin-top: 10px; }
+
+/* line 12, /Users/boris/code/lewagon/middleman-airbnb/source/stylesheets/layout/_footer.scss */
+#footer a {
+  color: #777777;
+  font-size: 30px;
+  letter-spacing: 20px;
+  transition: color 0.5s ease; }
+
+/* line 18, /Users/boris/code/lewagon/middleman-airbnb/source/stylesheets/layout/_footer.scss */
+#footer a:hover {
+color: #D23333; }
