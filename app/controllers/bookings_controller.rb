@@ -10,14 +10,18 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @gig = Gig.find(params[:gig_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
 
+    @gig = Gig.find(params[:gig_id])
+    @booking.gig = @gig
+
     if @booking.save
-      redirect_to booking_path(@booking)   #:action => 'show'
+      redirect_to gig_booking_path(@gig, @booking)   #:action => 'show'
 
     else
       render :new
@@ -45,5 +49,7 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:quantity, :user_id, :rating, :rating_description, :gig_id)
   end
+
+
 
 end
