@@ -1,9 +1,12 @@
 .card {
-  height: 175px;
+  height: 150px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   color: white;
   position: relative;
+  border-radius: 10px;
+  padding-top: 20px;
+  margin-top: 50px;
 }
 .card-user {
   position: absolute;
@@ -18,12 +21,13 @@
   text-transform: uppercase;
 }
 .card-description {
-  position: absolute;
+  position: center;
   bottom: 10px;
   left: 10px;
+  text-align: center;
 }
 .card-description h2 {
-  font-size: 24px;
+  font-size: 40px;
 }
 .card-description p {
   font-size: 13px;
@@ -40,4 +44,8 @@
 }
 .card-link:hover{
   opacity: 0.1;
+}
+
+form-card{
+
 }

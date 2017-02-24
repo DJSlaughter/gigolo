@@ -1,9 +1,10 @@
 <h2>HELLO, SHOW GIG</h2>
 
 <p>
+
   <%= @gig.name  %>
   <% if @gig.photo? %>
   <%= cl_image_tag @gig.photo, height: 300, width: 400, crop: :fill %>
   <% end %>
-<p>
+</p>
 
