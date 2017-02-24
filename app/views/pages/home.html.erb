@@ -21,8 +21,20 @@
   </div>
 </div>
 
+<%= link_to "All gigs you can attend!", gigs_path %>
+
 <div class = container text-center>
-<h2> List or GIGS </h2>
+   <% @gigs.each do |gig| %>
+    <h2> <%= gig.name %>: </h2>
+    <p><strong><%= gig.date %></strong></p>
+    <p><%= gig.description %></p>
+    <p>  <% if gig.photo? %>
+    <%= cl_image_tag gig.photo, height: 300, width: 400, crop: :fill %>
+  <% end %></p>
+    <%= link_to "Go!", gig_path(gig) %>
+
+  <% end %>
+
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-4">

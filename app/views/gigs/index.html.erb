@@ -1,4 +1,9 @@
 <h1>HELLO, INDEX GIG</h1>
 
+<% @gigs.each do |gig| %>
+    <p> <%= gig.name %>: <%= gig.date %> => <%= gig.description %> with the host: <%= gig.host.first_name %> </p>
+    <%= link_to "Create booking",  new_gig_booking_path(gig)  %>
+
+<% end %>
 
 
