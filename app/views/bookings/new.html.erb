@@ -1,0 +1,21 @@
+<h1>Create booking</h1>
+
+
+<div class="form-card">
+<div class="col-md-6 col-sm-6 no-padding">
+  <%= simple_form_for [@gig, @booking] do |f| %>
+    <%= f.input :quantity %>
+    <%= f.input :rating %>
+    <%= f.input :rating_description, as: :text %>
+
+  </div>
+
+  <div class="col-md-6 col-sm-6 no-padding">
+
+
+  <div class="form-actions">
+   <%= f.button :submit, "Confirm the creation", class:"btn btn-success btn-lg" %>
+   </div>
+ </div>
+ <% end %>
+
